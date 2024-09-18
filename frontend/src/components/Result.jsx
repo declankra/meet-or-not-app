@@ -8,7 +8,7 @@ function Result({ data, onRestart }) {
     // Fetch agenda from backend
     const fetchAgenda = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/generate-agenda', {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/generate-agenda`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
