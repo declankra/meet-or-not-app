@@ -2,7 +2,7 @@ const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const {OpenAI} = require("openai");
 const cors = require("cors")({origin: true});
-require('dotenv').config();
+require("dotenv").config();
 
 
 // Initialize Firebase Admin SDK
@@ -12,15 +12,15 @@ admin.initializeApp();
 const db = admin.firestore();
 
 // Load environment variables in development
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
 }
 
 // Get the API key from the environment variable
 const apiKey = process.env.OPENAI_API_KEY;
 
 if (!apiKey) {
-  console.error('OpenAI API key is missing');
+  console.error("OpenAI API key is missing");
   process.exit(1);
 }
 

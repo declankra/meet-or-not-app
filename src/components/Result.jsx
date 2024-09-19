@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+
 
 function Result({ data, onRestart }) {
   const [agenda, setAgenda] = useState('');
@@ -34,7 +36,9 @@ function Result({ data, onRestart }) {
       ) : (
         <>
           <h2>Your Meeting Agenda</h2>
-          <p>{agenda}</p>
+          <div className="agenda-content">
+            <ReactMarkdown>{agenda}</ReactMarkdown>
+          </div>
           <button onClick={onRestart}>Start Over</button>
         </>
       )}
