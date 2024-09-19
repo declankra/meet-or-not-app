@@ -8,6 +8,8 @@ import StepTwo from './components/StepTwo';
 import StepThree from './components/StepThree';
 import StepFour from './components/StepFour';
 import Result from './components/Result';
+import { app, analytics } from './firebaseConfig';
+
 
 function App() {
   const [step, setStep] = useState(1);

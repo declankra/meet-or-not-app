@@ -1,0 +1,46 @@
+{
+    "name": "meet-or-not",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Meet Or Not - Determine if a meeting is necessary and generate an effective agenda.",
+    "scripts": {
+        "start": "firebase serve",
+        "build": "react-scripts build && npm run move-build",
+        "deploy": "firebase deploy",
+        "move-build": "rimraf public/* && cp -r build/* public/",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "dependencies": {
+        "firebase": "^9.22.0",
+        "git": "^0.1.5",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.26.2",
+        "react-scripts": "5.0.1"
+    },
+    "devDependencies": {
+        "rimraf": "^3.0.2"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}

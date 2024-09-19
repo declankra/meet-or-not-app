@@ -8,7 +8,7 @@ function Result({ data, onRestart }) {
     // Fetch agenda from backend
     const fetchAgenda = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/generate-agenda`, {
+        const response = await fetch(`https://us-central1-meet-or-not.cloudfunctions.net/generateAgenda`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

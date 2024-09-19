@@ -1,39 +1,61 @@
-const OpenAI = require('openai');
-const admin = require('firebase-admin');
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+const {OpenAI} = require("openai");
+const cors = require("cors")({origin: true});
+require('dotenv').config();
+
 
 // Initialize Firebase Admin SDK
-const serviceAccount = require('../Meet or Not Firebase Service Account.json');
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+admin.initializeApp();
+
+// Connect to Firestore db
 const db = admin.firestore();
 
-// OpenAI API Configuration
+// Load environment variables in development
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+// Get the API key from the environment variable
+const apiKey = process.env.OPENAI_API_KEY;
+
+if (!apiKey) {
+  console.error('OpenAI API key is missing');
+  process.exit(1);
+}
+
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: apiKey,
 });
 
-exports.generateAgenda = async (req, res) => {
-  const { purpose, expectedOutcomeType, expectedOutcome, priority } = req.body;
 
-  // Store data in Firestore
-  try {
-    await db.collection('meetings').add({
-      purpose,
-      expectedOutcomeType,
-      expectedOutcome,
-      priority,
-      timestamp: admin.firestore.FieldValue.serverTimestamp(),
-    });
-  } catch (error) {
-    console.error('Error saving to Firestore:', error);
-  }
+exports.generateAgenda = functions.https.onRequest((req, res) => {
+  cors(req, res, async () => {
+    if (req.method !== "POST") {
+      return res.status(405).json({error: "Method not allowed"});
+    }
 
-  // Generate agenda using OpenAI
-  try {
-    const prompt = [
-      {
-        role: "system", content: `**Instructions:**
+    const {purpose, expectedOutcomeType, expectedOutcome, priority} = req.body;
+
+    // Store data in Firestore
+    try {
+      await db.collection("meetings").add({
+        purpose,
+        expectedOutcomeType,
+        expectedOutcome,
+        priority,
+        timestamp: admin.firestore.FieldValue.serverTimestamp(),
+      });
+    } catch (error) {
+      console.error("Error saving to Firestore:", error);
+      return res.status(500).json({error: "Error saving to database"});
+    }
+
+    // Generate agenda using OpenAI
+    try {
+      const prompt = [
+        {
+          role: "system", content: `**Instructions:**
 
 Your role is to create meeting agendas directly based on four points about the meeting: the meeting’s purpose, expected outcome type, expected outcome, and priority. You'll use concise, clear language to craft detailed agendas that outline the purpose, expected outcomes, agenda items (with leads and time slots), and preparation tasks, considering participant roles, preparation importance, agenda finalization and communication, feedback mechanisms, and a closing summary. Your interaction style is straightforward and efficient, focusing on generating agendas immediately from user inputs using templates for various types of meetings such as Decision Meetings, Creative Solutions Discussions, Coordination Meetings, and Information Sharing Sessions. These templates detail specific elements like meeting subject, body text, and assigned leads, prioritizing preparation and participant roles for effective meetings.
 
@@ -228,25 +250,26 @@ Please review the pre-meeting materials provided and jot down any questions you 
 - [Name] for facilitating Q&A
 
 Looking forward to keeping everyone informed and addressing your questions,
-[Your Name]` },
-      {
-        role: "user", content: `Using your instructions, generate a meeting agenda based on the following user's details:
+[Your Name]`},
+        {
+          role: "user", content: `Using your instructions, generate a meeting agenda based on the following user's details:
     - Purpose: ${purpose}
     - Expected Outcome Type: ${expectedOutcomeType}
     - Expected Outcome: ${expectedOutcome}
-    - Priority: ${priority}`
-      }
-    ];
+    - Priority: ${priority}`,
+        },
+      ];
 
-    const response = await openai.chat.completions.create({
-      model: 'gpt-4o-2024-08-06',
-      messages: prompt,
-    });
+      const response = await openai.chat.completions.create({
+        model: "gpt-4o-2024-08-06",
+        messages: prompt,
+      });
 
-    const agenda = response.choices[0].message.content.trim();
-    res.json({ agenda });
-  } catch (error) {
-    console.error('Error generating agenda:', error);
-    res.status(500).json({ error: 'Failed to generate agenda' });
-  }
-};
+      const agenda = response.choices[0].message.content.trim();
+      res.json({agenda});
+    } catch (error) {
+      console.error("Error generating agenda:", error.response && error.response.data ? error.response.data : error.message);
+      res.status(500).json({error: "Failed to generate agenda"});
+    }
+  });
+});

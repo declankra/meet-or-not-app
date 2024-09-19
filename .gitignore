@@ -9,3 +9,28 @@ node_modules
 
 #Firebase private key
 backend/Meet or Not Firebase Service Account.json
+
+
+### now because everything has moved to archive folder
+/archive/
+# Environment variables
+archive/backend/.env
+archive/froned/.env
+
+# Modules
+archive/backend/node_modules
+archive/frontend/node_modules
+archive/node_modules
+
+#Firebase private key
+archive/backend/Meet or Not Firebase Service Account.json
+
+/functions/.runtimeconfig.json
+
+/functions/.env
+
+node_modules/
+build/
+public/
+.env
+.firebase
