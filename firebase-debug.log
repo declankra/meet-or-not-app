@@ -86,3 +86,465 @@
 [info] i  hosting: ::1 - - [19/Sep/2024:21:53:13 +0000] "GET /static/js/main.ae751cd6.js HTTP/1.1" 200 - "http://localhost:5002/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [19/Sep/2024:21:53:13 +0000] \"GET /static/js/main.ae751cd6.js HTTP/1.1\" 200 - \"http://localhost:5002/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36\""}}
 [info] i  hosting: ::1 - - [19/Sep/2024:21:53:13 +0000] "GET /static/js/main.bd2d8d9e.js HTTP/1.1" 200 - "http://localhost:5002/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [19/Sep/2024:21:53:13 +0000] \"GET /static/js/main.bd2d8d9e.js HTTP/1.1\" 200 - \"http://localhost:5002/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36\""}}
 [info] i  hosting: ::1 - - [19/Sep/2024:21:53:15 +0000] "GET /favicon.ico HTTP/1.1" 200 - "http://localhost:5002/steps" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [19/Sep/2024:21:53:15 +0000] \"GET /favicon.ico HTTP/1.1\" 200 - \"http://localhost:5002/steps\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36\""}}
+[debug] [2024-09-19T21:55:21.045Z] File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers"}}
+[debug] [2024-09-19T21:55:22.049Z] Validating nodejs source
+[debug] [2024-09-19T21:55:22.651Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint ./index.cjs",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.cjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "openai": "^4.62.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-19T21:55:22.651Z] Building nodejs source
+[debug] [2024-09-19T21:55:22.651Z] Failed to find version of module node: reached end of search path /Users/macbook/Code/meet-or-not/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-09-19T21:55:22.652Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-19T21:55:22.653Z] Found firebase-functions binary at '/Users/macbook/Code/meet-or-not/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8183
+
+[debug] [2024-09-19T21:55:22.847Z] Got response from /__/functions.yaml {"endpoints":{"generateAgenda":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"generateAgenda"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: generateAgenda. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: generateAgenda."}}
+[debug] [2024-09-19T21:55:36.086Z] File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers"}}
+[debug] [2024-09-19T21:55:37.087Z] Validating nodejs source
+[debug] [2024-09-19T21:55:37.456Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint ./index.cjs",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.cjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "openai": "^4.62.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-19T21:55:37.456Z] Building nodejs source
+[debug] [2024-09-19T21:55:37.456Z] Failed to find version of module node: reached end of search path /Users/macbook/Code/meet-or-not/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-09-19T21:55:37.457Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-19T21:55:37.457Z] Found firebase-functions binary at '/Users/macbook/Code/meet-or-not/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8314
+
+[debug] [2024-09-19T21:55:37.635Z] Got response from /__/functions.yaml {"endpoints":{"generateAgenda":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"generateAgenda"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: generateAgenda. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: generateAgenda."}}
+[debug] [2024-09-19T21:55:39.376Z] File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers"}}
+[debug] [2024-09-19T21:55:40.378Z] Validating nodejs source
+[debug] [2024-09-19T21:55:40.731Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint ./index.cjs",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.cjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "openai": "^4.62.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-19T21:55:40.731Z] Building nodejs source
+[debug] [2024-09-19T21:55:40.731Z] Failed to find version of module node: reached end of search path /Users/macbook/Code/meet-or-not/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-09-19T21:55:40.732Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-19T21:55:40.732Z] Found firebase-functions binary at '/Users/macbook/Code/meet-or-not/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8672
+
+[debug] [2024-09-19T21:55:40.911Z] Got response from /__/functions.yaml {"endpoints":{"generateAgenda":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"generateAgenda"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: generateAgenda. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: generateAgenda."}}
+[debug] [2024-09-19T21:55:41.135Z] File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers"}}
+[debug] [2024-09-19T21:55:42.137Z] Validating nodejs source
+[debug] [2024-09-19T21:55:42.530Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint ./index.cjs",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.cjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "openai": "^4.62.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-19T21:55:42.530Z] Building nodejs source
+[debug] [2024-09-19T21:55:42.530Z] Failed to find version of module node: reached end of search path /Users/macbook/Code/meet-or-not/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-09-19T21:55:42.531Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-19T21:55:42.531Z] Found firebase-functions binary at '/Users/macbook/Code/meet-or-not/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8191
+
+[debug] [2024-09-19T21:55:42.714Z] Got response from /__/functions.yaml {"endpoints":{"generateAgenda":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"generateAgenda"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: generateAgenda. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: generateAgenda."}}
+[debug] [2024-09-19T21:56:14.130Z] File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers"}}
+[debug] [2024-09-19T21:56:15.132Z] Validating nodejs source
+[debug] [2024-09-19T21:56:15.481Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint ./index.cjs",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.cjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "openai": "^4.62.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-19T21:56:15.481Z] Building nodejs source
+[debug] [2024-09-19T21:56:15.481Z] Failed to find version of module node: reached end of search path /Users/macbook/Code/meet-or-not/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-09-19T21:56:15.482Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-19T21:56:15.482Z] Found firebase-functions binary at '/Users/macbook/Code/meet-or-not/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8204
+
+[debug] [2024-09-19T21:56:15.664Z] Got response from /__/functions.yaml {"endpoints":{"generateAgenda":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"generateAgenda"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: generateAgenda. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: generateAgenda."}}
+[debug] [2024-09-19T21:56:20.438Z] File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers"}}
+[debug] [2024-09-19T21:56:21.441Z] Validating nodejs source
+[debug] [2024-09-19T21:56:21.933Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint ./index.cjs",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.cjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "openai": "^4.62.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-19T21:56:21.933Z] Building nodejs source
+[debug] [2024-09-19T21:56:21.933Z] Failed to find version of module node: reached end of search path /Users/macbook/Code/meet-or-not/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-09-19T21:56:21.934Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-19T21:56:21.936Z] Found firebase-functions binary at '/Users/macbook/Code/meet-or-not/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8624
+
+[debug] [2024-09-19T21:56:22.117Z] Got response from /__/functions.yaml {"endpoints":{"generateAgenda":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"generateAgenda"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: generateAgenda. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: generateAgenda."}}
+[debug] [2024-09-19T21:56:24.962Z] File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers"}}
+[debug] [2024-09-19T21:56:25.964Z] Validating nodejs source
+[debug] [2024-09-19T21:56:26.370Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint ./index.cjs",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.cjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "openai": "^4.62.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-19T21:56:26.370Z] Building nodejs source
+[debug] [2024-09-19T21:56:26.370Z] Failed to find version of module node: reached end of search path /Users/macbook/Code/meet-or-not/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-09-19T21:56:26.370Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-19T21:56:26.371Z] Found firebase-functions binary at '/Users/macbook/Code/meet-or-not/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8481
+
+[debug] [2024-09-19T21:56:26.566Z] Got response from /__/functions.yaml {"endpoints":{"generateAgenda":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"generateAgenda"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: generateAgenda. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: generateAgenda."}}
+[debug] [2024-09-19T21:56:31.825Z] File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers"}}
+[debug] [2024-09-19T21:56:32.827Z] Validating nodejs source
+[debug] [2024-09-19T21:56:33.238Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint ./index.cjs",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.cjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "openai": "^4.62.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-19T21:56:33.238Z] Building nodejs source
+[debug] [2024-09-19T21:56:33.238Z] Failed to find version of module node: reached end of search path /Users/macbook/Code/meet-or-not/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-09-19T21:56:33.239Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-19T21:56:33.239Z] Found firebase-functions binary at '/Users/macbook/Code/meet-or-not/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8425
+
+[debug] [2024-09-19T21:56:33.421Z] Got response from /__/functions.yaml {"endpoints":{"generateAgenda":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"generateAgenda"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: generateAgenda. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: generateAgenda."}}
+[debug] [2024-09-19T21:56:39.504Z] File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers"}}
+[debug] [2024-09-19T21:56:40.510Z] Validating nodejs source
+[debug] [2024-09-19T21:56:40.960Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint ./index.cjs",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.cjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "openai": "^4.62.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-19T21:56:40.961Z] Building nodejs source
+[debug] [2024-09-19T21:56:40.961Z] Failed to find version of module node: reached end of search path /Users/macbook/Code/meet-or-not/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-09-19T21:56:40.961Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-19T21:56:40.962Z] Found firebase-functions binary at '/Users/macbook/Code/meet-or-not/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8459
+
+[debug] [2024-09-19T21:56:41.144Z] Got response from /__/functions.yaml {"endpoints":{"generateAgenda":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"generateAgenda"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: generateAgenda. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: generateAgenda."}}
+[debug] [2024-09-19T21:56:51.163Z] File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers"}}
+[debug] [2024-09-19T21:56:52.170Z] Validating nodejs source
+[debug] [2024-09-19T21:56:52.617Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint ./index.cjs",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.cjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "openai": "^4.62.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-19T21:56:52.617Z] Building nodejs source
+[debug] [2024-09-19T21:56:52.617Z] Failed to find version of module node: reached end of search path /Users/macbook/Code/meet-or-not/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-09-19T21:56:52.618Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-19T21:56:52.618Z] Found firebase-functions binary at '/Users/macbook/Code/meet-or-not/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8946
+
+[debug] [2024-09-19T21:56:52.796Z] Got response from /__/functions.yaml {"endpoints":{"generateAgenda":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"generateAgenda"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: generateAgenda. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: generateAgenda."}}
+[debug] [2024-09-19T21:56:55.551Z] File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/macbook/Code/meet-or-not/functions/index.cjs changed, reloading triggers"}}
+[debug] [2024-09-19T21:56:56.553Z] Validating nodejs source
+[debug] [2024-09-19T21:56:56.963Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint ./index.cjs",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.cjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "openai": "^4.62.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-19T21:56:56.963Z] Building nodejs source
+[debug] [2024-09-19T21:56:56.963Z] Failed to find version of module node: reached end of search path /Users/macbook/Code/meet-or-not/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-09-19T21:56:56.963Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-19T21:56:56.964Z] Found firebase-functions binary at '/Users/macbook/Code/meet-or-not/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8626
+
+[debug] [2024-09-19T21:56:57.156Z] Got response from /__/functions.yaml {"endpoints":{"generateAgenda":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"generateAgenda"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: generateAgenda. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: generateAgenda."}}

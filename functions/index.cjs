@@ -135,7 +135,6 @@ We're convening a decision meeting to tackle [brief description of the decision 
 Please review the attached materials and come prepared with your insights and readiness to vote on the decision points.
 
 **Date and Time**: [Date and Time]
-
 **Location**: [Physical location or virtual meeting link]
 
 **Assigned Leads**:
@@ -171,7 +170,6 @@ Let’s gather our collective creativity to explore innovative solutions for [br
 Come prepared with any preliminary ideas and an open mind for collaborative brainstorming.
 
 **Date and Time**: [Date and Time]
-
 **Location**: [Physical location or virtual meeting link]
 
 **Assigned Leads**:
@@ -206,7 +204,6 @@ We need to align our efforts and ensure everyone is on the same page regarding [
 Please come prepared to discuss your current progress, any challenges you're facing, and suggestions for collective action.
 
 **Date and Time**: [Date and Time]
-
 **Location**: [Physical location or virtual meeting link]
 
 **Assigned Leads**:
@@ -241,7 +238,6 @@ An information sharing session has been scheduled to ensure everyone is updated 
 Please review the pre-meeting materials provided and jot down any questions you may have.
 
 **Date and Time**: [Date and Time]
-
 **Location**: [Physical location or virtual meeting link]
 
 **Assigned Leads**:
