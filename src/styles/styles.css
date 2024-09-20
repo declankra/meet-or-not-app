@@ -171,3 +171,36 @@ body {
 .agenda-content p {
   margin-bottom: 10px;
 }
+
+/* adding 'im not sure' text to the right of input box */
+/* Update the input styles */
+.input-wrapper {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.input-wrapper input[type='text'] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.not-sure {
+  position: absolute;
+  right: -80px; /* Adjust this value to move the text closer or further */
+  top: 50%;
+  transform: translateY(-50%);
+  color: purple;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.not-sure:hover {
+  opacity: 0.8;
+}
