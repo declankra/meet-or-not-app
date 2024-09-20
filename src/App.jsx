@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import LearnMorePage from './components/LearnMorePage';
 import ProgressBar from './components/ProgressBar';
@@ -29,6 +29,13 @@ function App() {
       return {
         pathname: '/necessity-no',
         state: { noMeetingReason: data.noMeetingReason }
+      };
+    }
+    if (step === 4) {
+      // Redirect to NecessityYes page if user passes step four
+      return {
+        pathname: '/necessity-yes',
+        state: { formData }
       };
     }
     setStep(step + 1);
@@ -78,6 +85,7 @@ function App() {
         <Route path="/learn-more" element={<LearnMorePage />} />
         <Route path="/steps" element={<Steps />} />
         <Route path="/necessity-no" element={<NecessityNo />} />
+        <Route path="/necessity-yes" element={<Result />} />
       </Routes>
     </Router>
   );

@@ -1,33 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-
-function Result({ data, onRestart }) {
+function Result() {
   const [agenda, setAgenda] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch agenda from backend
     const fetchAgenda = async () => {
       try {
+        const formData = location.state?.formData;
+        if (!formData) {
+          throw new Error('No form data available');
+        }
+
         const response = await fetch(`https://us-central1-meet-or-not.cloudfunctions.net/generateAgenda`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(formData),
         });
         const result = await response.json();
         setAgenda(result.agenda);
       } catch (error) {
         console.error('Error fetching agenda:', error);
+        setAgenda('Failed to generate agenda. Please try again.');
       } finally {
         setIsLoading(false);
       }
     };
 
     fetchAgenda();
-  }, [data]);
+  }, [location.state]);
+
+  const handleRestart = () => {
+    navigate('/');
+  };
 
   return (
     <div className="result-container">
@@ -39,7 +50,7 @@ function Result({ data, onRestart }) {
           <div className="agenda-content">
             <ReactMarkdown>{agenda}</ReactMarkdown>
           </div>
-          <button onClick={onRestart}>Start Over</button>
+          <button onClick={handleRestart}>Start Over</button>
         </>
       )}
     </div>
