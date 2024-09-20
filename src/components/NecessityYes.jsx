@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-function Result() {
+function NecessityYes() {
   const [agenda, setAgenda] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
@@ -57,4 +57,4 @@ function Result() {
   );
 }
 
-export default Result;
+export default NecessityYes;

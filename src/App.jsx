@@ -7,7 +7,7 @@ import StepOne from './components/StepOne';
 import StepTwo from './components/StepTwo';
 import StepThree from './components/StepThree';
 import StepFour from './components/StepFour';
-import Result from './components/Result';
+import NecessityYes from './components/NecessityYes';
 import NecessityNo from './components/NecessityNo';
 import { app, analytics } from './firebaseConfig';
 
@@ -73,7 +73,7 @@ function App() {
             {step === 4 && <StepFour onNext={handleStepNext} />}
           </>
         )}
-        {isLastStep && <Result data={formData} onRestart={handleRestart} />}
+        {isLastStep && <NecessityYes data={formData} onRestart={handleRestart} />}
       </div>
     );
   };
@@ -85,7 +85,7 @@ function App() {
         <Route path="/learn-more" element={<LearnMorePage />} />
         <Route path="/steps" element={<Steps />} />
         <Route path="/necessity-no" element={<NecessityNo />} />
-        <Route path="/necessity-yes" element={<Result />} />
+        <Route path="/necessity-yes" element={<NecessityYes />} />
       </Routes>
     </Router>
   );
