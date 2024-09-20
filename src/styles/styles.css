@@ -205,8 +205,7 @@ body {
   opacity: 0.8;
 }
 
-/* Radio button styles */
-/* Radio button styles */
+/* Step 3 Radio button styles */
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -225,6 +224,43 @@ body {
   margin-right: 5px;
 }
 
-/* Remove mobile-specific styles */
+.priority-matrix-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Step 4 2x2 matrix styles */
+.matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.quadrant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.quadrant:hover {
+  background-color: #f0f0f0;
+}
+
+.quadrant.selected {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+
+/* mobile-specific styles */
 @media (max-width: 768px) {
 }
