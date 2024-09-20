@@ -80,13 +80,15 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/learn-more" element={<LearnMorePage />} />
-        <Route path="/steps" element={<Steps />} />
-        <Route path="/necessity-no" element={<NecessityNo />} />
-        <Route path="/necessity-yes" element={<NecessityYes />} />
-      </Routes>
+      <div className="app-container">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/learn-more" element={<LearnMorePage />} />
+          <Route path="/steps" element={<Steps />} />
+          <Route path="/necessity-no" element={<NecessityNo onRestart={handleRestart} />} />
+          <Route path="/necessity-yes" element={<NecessityYes onRestart={handleRestart} />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

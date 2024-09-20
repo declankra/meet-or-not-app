@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-function NecessityNo() {
+function NecessityNo({ onRestart }) {
   const location = useLocation();
   const navigate = useNavigate();
   const { noMeetingReason } = location.state || {};
@@ -18,6 +18,7 @@ function NecessityNo() {
   const explanation = explanations[noMeetingReason] || explanations.default;
 
   const handleStartOver = () => {
+    onRestart();
     navigate('/');
   };
 

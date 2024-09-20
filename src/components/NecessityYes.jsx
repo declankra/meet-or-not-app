@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-function NecessityYes() {
+function NecessityYes({ onRestart }) {
   const [agenda, setAgenda] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
@@ -37,6 +37,7 @@ function NecessityYes() {
   }, [location.state]);
 
   const handleRestart = () => {
+    onRestart();
     navigate('/');
   };
 
