@@ -8,7 +8,7 @@ function StepOne({ onNext }) {
   };
 
   const handleNotSure = () => {
-    onNext({ necessityNo: true, noMeetingReason: 'purpose' });
+    onNext({ necessityNo: true, noMeetingReason: 'no_purpose' });
   };
 
   return (

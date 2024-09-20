@@ -7,7 +7,7 @@ function NecessityNo() {
   const { noMeetingReason } = location.state || {};
 
   const explanations = {
-    purpose: "No purpose: you need to have a clear, objective-orientated purpose that signifies your understanding of why the meeting needs to take place.",
+    no_purpose: "No purpose: you need to have a clear, objective-orientated purpose that signifies your understanding of why the meeting needs to take place.",
     outcome_type_not_sure: "No clear outcome: you should have a clear understanding of your purpose and what you intend to get out of the meeting",
     outcome_type_awareness: "Purely information sharing: unless the information meeting requires live interaction (therefore not one way interaction), cancel it. consider alternative methods of distributing info: memo, podcast, or vlog. If cancelling it bothers you so much, sleep on it, and then if you’re still bothered, keep it to a max of 30 min",
     outcome_unclear: "No defined outcome: you should have a clear understanding of your purpose and what you intend to get out of the meetin. It's okay if the actual outcome deviates from this, but initial direction is needed.",
