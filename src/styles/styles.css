@@ -1,85 +1,88 @@
 body {
-    margin: 0;
-    font-family: 'Titillium Web, sans-serif';
-    background-color: #fff;
-    color: #4b0082; /* Purple color */
-  }
-  
-  .app-container {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .progress-bar {
-    width: 100%;
-    background-color: #e0e0e0;
-    height: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .progress-bar-filled {
-    height: 10px;
-    background-color: #4b0082; /* Purple color */
-    transition: width 0.3s ease-in-out;
-  }
-  
-  .step-container,
-  .result-container {
-    margin-top: 20px;
-  }
-  
-  input[type='text'] {
-    width: 80%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4b0082; /* Purple color */
+  margin: 0;
+  font-family: 'Titillium Web, sans-serif';
+  background-color: #fff;
+  color: #4b0082; /* Purple color */
+}
+
+.app-container {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 10px;
+  margin-bottom: 20px;
+}
+
+.progress-bar-filled {
+  height: 10px;
+  background-color: #4b0082; /* Purple color */
+  transition: width 0.3s ease-in-out;
+}
+
+.step-container,
+.result-container {
+  margin-top: 20px;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4b0082; /* Purple color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #a9a9a9;
+  cursor: not-allowed;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1e1e1e;
     color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:disabled {
-    background-color: #a9a9a9;
-    cursor: not-allowed;
-  }
-  
-  h2 {
-    font-weight: normal;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #1e1e1e;
-      color: #fff;
-    }
-  
-    input[type='text'] {
-      background-color: #333;
-      color: #fff;
-      border: 1px solid #555;
-    }
-    .agenda-content {
-      background-color: #2a2a2a !important;
-      color: #fff !important;
-      box-shadow: 0 2px 4px rgba(255,255,255,0.1);
-    }
   }
 
-  /* Landing Page Styles */
+  input[type='text'] {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+  }
+  .agenda-content {
+    background-color: #2a2a2a !important;
+    color: #fff !important;
+    box-shadow: 0 2px 4px rgba(255,255,255,0.1);
+  }
+}
+
+/* Landing Page Styles */
 .landing-page {
   text-align: center;
   margin-top: 50px;
+  padding: 0 20px;
 }
 
 .landing-page h1 {
@@ -101,6 +104,7 @@ body {
   border: none;
   border-radius: 5px;
   text-decoration: none;
+  display: inline-block;
 }
 
 .start-button a,
@@ -117,7 +121,7 @@ body {
 /* Learn More Page Styles */
 .learn-more-page {
   text-align: center;
-  margin: 50px;
+  margin: 50px 20px;
 }
 
 .learn-more-page h1 {
@@ -150,13 +154,14 @@ body {
 
 /* style the results response */
 .agenda-content {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   text-align: left;
+  box-sizing: border-box;
 }
 
 .agenda-content h1, .agenda-content h2, .agenda-content h3 {
@@ -181,7 +186,7 @@ body {
 /* Update the input styles */
 .input-wrapper {
   position: relative;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -192,18 +197,17 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
 .not-sure {
-  position: absolute;
-  right: -80px; /* Adjust this value to move the text closer or further */
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;
+  display: block;
+  margin-top: 5px;
   color: purple;
   cursor: pointer;
   font-size: 14px;
   text-decoration: underline;
-  white-space: nowrap;
 }
 
 .not-sure:hover {
@@ -241,7 +245,8 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 300px;
   margin-bottom: 20px;
 }
@@ -265,7 +270,31 @@ body {
   font-weight: bold;
 }
 
-
 /* mobile-specific styles */
 @media (max-width: 768px) {
+  .app-container {
+    padding: 10px;
+  }
+
+  .landing-page h1 {
+    font-size: 2em;
+  }
+
+  .landing-page p {
+    font-size: 1em;
+  }
+
+  .start-button,
+  .learn-more-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .matrix {
+    height: 250px;
+  }
+
+  .quadrant {
+    font-size: 0.8em;
+  }
 }
