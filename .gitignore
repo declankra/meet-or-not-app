@@ -31,7 +31,6 @@ archive/backend/Meet or Not Firebase Service Account.json
 
 node_modules/
 build/
-public/
 .env
 .firebase
 src/firebaseConfig.js
