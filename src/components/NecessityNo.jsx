@@ -28,8 +28,9 @@ function NecessityNo({ onRestart }) {
       <div className="explanation-content">
         <p><strong>Reason = </strong>{explanation}</p>
       </div>
-      <h3>Next Steps [generic/static right now, soon to be dynamic]</h3>
+      <h3>Next Steps</h3>
       <ul>
+        <li>Get a clear understanding of the meeting's purpose and objectives</li>
         <li>Consider alternative forms of communication (email, chat, etc.)</li>
         <li>Document your decision and share with relevant team members</li>
         <li>Set a reminder to follow up on the topic if needed</li>

@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 function NecessityYes({ onRestart }) {
   const [agenda, setAgenda] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [showAgenda, setShowAgenda] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -15,15 +16,11 @@ function NecessityYes({ onRestart }) {
         if (!formData) {
           throw new Error('No form data available');
         }
-        // console.log('Form data received in NecessityYes:', formData);
 
-        // Use the priority from formData directly
         const apiData = {
           ...formData,
           priority: formData.priority
         };
-
-        // console.log('Data being sent to API:', apiData);
 
         const response = await fetch(`https://us-central1-meet-or-not.cloudfunctions.net/generateAgenda`, {
           method: 'POST',
@@ -50,9 +47,21 @@ function NecessityYes({ onRestart }) {
     navigate('/');
   };
 
+  const handleGenerateAgenda = () => {
+    setShowAgenda(true);
+  };
+
   return (
     <div className="result-container">
-      {isLoading ? (
+      {!showAgenda ? (
+        <>
+          <h2>You should Meet!</h2>
+          <p>
+            Your responses show that you have a clear and objective-oriented understanding of the meeting's purpose and what you expect to achieve. <br></br><br></br>You've also stated that the meeting ranks high on your priority list, so <strong>you should continue with scheduling the meeting.</strong>
+          </p>
+          <button onClick={handleGenerateAgenda}>Generate Agenda</button>
+        </>
+      ) : isLoading ? (
         <p>Loading your meeting agenda...</p>
       ) : (
         <>
