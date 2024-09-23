@@ -4,16 +4,14 @@ import { Link } from 'react-router-dom';
 function LearnMorePage() {
   return (
     <div className="learn-more-page">
-    <h1>Learn More About This Project</h1>
+    <h1>About This Project</h1>
     
-    <p>
-      This is a fun personal project to:
+    <p> This is a fun personal project to: </p>
       <ol>
         <li>use generative AI in a web app</li>
         <li>get more practice building full-stack web apps</li>
         <li>perhaps offer some utility for people frustrated with unproductive meetings</li>
       </ol>
-    </p>
 
     <p>
       hope you enjoy using this. it was fun to make! i’ll probably update this page sometime 
