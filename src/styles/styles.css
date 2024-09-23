@@ -175,6 +175,8 @@ h2 {
   position: relative;
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .input-wrapper input[type='text'] {
@@ -185,18 +187,17 @@ h2 {
   border-radius: 4px;
   font-size: 16px;
   box-sizing: border-box;
-  background-color: #fff; /* Add this line to make the input box white */
-  color: #000; /* Add this line to make the input text black */
+  background-color: #fff;
+  color: #000;
 }
 
 .not-sure {
-  position: static;
-  display: block;
-  margin-top: 5px;
+  margin-left: 10px;
   color: purple;
   cursor: pointer;
   font-size: 14px;
   text-decoration: underline;
+  white-space: nowrap;
 }
 
 .not-sure:hover {
