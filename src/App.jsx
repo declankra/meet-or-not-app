@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import LearnMorePage from './components/LearnMorePage';
 import ProgressBar from './components/ProgressBar';
@@ -9,7 +9,7 @@ import StepThree from './components/StepThree';
 import StepFour from './components/StepFour';
 import NecessityYes from './components/NecessityYes';
 import NecessityNo from './components/NecessityNo';
-import { app, analytics } from './firebaseConfig';
+// import { app, analytics } from './firebaseConfig';
 
 function App() {
   const [step, setStep] = useState(1);
@@ -23,7 +23,8 @@ function App() {
   const isLastStep = step > 4;
 
   const handleNext = (data) => {
-    setFormData({ ...formData, ...data });
+    const updatedFormData = { ...formData, ...data };
+    setFormData(updatedFormData);
     if (data.necessityNo) {
       // Redirect to NecessityNo page if there's no need for a meeting
       return {
@@ -35,7 +36,7 @@ function App() {
       // Redirect to NecessityYes page if user passes step four
       return {
         pathname: '/necessity-yes',
-        state: { formData }
+        state: { formData: updatedFormData }
       };
     }
     setStep(step + 1);

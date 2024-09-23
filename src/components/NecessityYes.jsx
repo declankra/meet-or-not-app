@@ -15,13 +15,22 @@ function NecessityYes({ onRestart }) {
         if (!formData) {
           throw new Error('No form data available');
         }
+        // console.log('Form data received in NecessityYes:', formData);
+
+        // Use the priority from formData directly
+        const apiData = {
+          ...formData,
+          priority: formData.priority
+        };
+
+        // console.log('Data being sent to API:', apiData);
 
         const response = await fetch(`https://us-central1-meet-or-not.cloudfunctions.net/generateAgenda`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(apiData),
         });
         const result = await response.json();
         setAgenda(result.agenda);

@@ -11,7 +11,16 @@ function PriorityMatrix({ onNext }) {
     if (selected === 'lowUrgencyLowImpact') {
       onNext({ necessityNo: true, noMeetingReason: 'low_priority' });
     } else {
-      onNext({ selected });
+      // Map the selected quadrant to a more descriptive priority
+      const priorityMap = {
+        'lowUrgencyHighImpact': 'Low Urgency, High Impact',
+        'highUrgencyHighImpact': 'High Urgency, High Impact',
+        'highUrgencyLowImpact': 'High Urgency, Low Impact'
+      };
+      
+      const priority = priorityMap[selected] || selected;
+      
+      onNext({ priority });
     }
   };
 
