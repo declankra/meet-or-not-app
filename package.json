@@ -5,14 +5,14 @@
     "description": "Meet Or Not - Determine if a meeting is necessary and generate an effective agenda.",
     "scripts": {
         "start": "react-scripts start",
-        "build": "npm run clean && react-scripts build && npm run copy-build",
+        "build": "react-scripts build",
+        "postbuild": "rimraf public/static && cp -r build/* public/ && rimraf build",
         "clean": "rimraf build && rimraf public/static",
-        "copy-build": "cp -r build/* public/",
         "serve": "firebase serve",
         "deploy": "npm run build && firebase deploy",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
-  },
+    },
     "engines": {
         "node": ">=14"
     },
