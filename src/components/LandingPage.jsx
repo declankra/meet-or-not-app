@@ -8,9 +8,7 @@ function LandingPage() {
       <p><i>the greatest meeting there ever was... or wasn't</i></p>
       
       <div className="center-container">
-        <button className="start-button">
-          <Link to="/steps">Start</Link>
-        </button>
+      <Link to="/steps" className="start-button">Start</Link>
       </div>
 
       <div className="info-boxes">
