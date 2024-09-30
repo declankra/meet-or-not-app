@@ -13,7 +13,7 @@ function LandingPage() {
 
       <div className="info-boxes">
         <div className="info-box">
-          <h3>what is this?</h3>
+          <h3>What is this?</h3>
           <ul>
             <li>a tool to ensure shitty meetings don't happen</li>
             <li>and your next meeting is the best one yet</li>
@@ -21,7 +21,7 @@ function LandingPage() {
           </ul>
         </div>
         <div className="info-box">
-          <h3>what does it do for me?</h3>
+          <h3>What does it do for me?</h3>
           <ul>
             <li>saves you time and energy</li>
             <li>improves your collaboration</li>
@@ -29,11 +29,11 @@ function LandingPage() {
           </ul>
         </div>
         <div className="info-box">
-          <h3>how does it work?</h3>
+          <h3>How does it work?</h3>
           <ul>
             <li>(1) you answer 4 short questions</li>
             <li>(2) it'll determine if your meeting is necessary </li>
-            <li>(3) and generates a personalized meeting agenda to ensure effectiveness</li>
+            <li>(3) and generate a personalized meeting agenda to ensure effectiveness</li>
           </ul>
         </div>
       </div>
