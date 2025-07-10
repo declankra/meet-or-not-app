@@ -1,6 +1,6 @@
 # Meet Or Not .io
 
-Visit the live website at [meetornot.io](https://meetornot.io)!
+Visit the live website at ([https://meetornot.io](https://meet-or-not.web.app/))!
 
 ## What is it?
 A tool to help you create productive meetings
